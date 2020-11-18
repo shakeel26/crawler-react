@@ -1,12 +1,11 @@
 import React, {useState} from "react";
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
-import Details from "./Details";
+import Modal from "./Modal";
 
 
 const Home = (props) => {
     const [degreeName, setDegreeName] = useState("");
     const [oneCourse, setOneCourse] = useState([]);
-
 
     return <Router>
         <div>
@@ -24,7 +23,7 @@ const Home = (props) => {
                 </div>
             </div>)}
             <Switch>
-                <Route path="/:degreeName" children={<Details singleCourse={oneCourse}/>}/>
+                <Route path="/:degreeName" children={<Modal singleCourse={oneCourse}/>}/>
             </Switch>
         </div>
     </Router>

@@ -10,7 +10,7 @@ function App() {
     axios.get('http://localhost:8081/getAllCourses')
         .then(res => {
             setGetAllCourses(res.data)
-        });
+        })
     return (
         <Home allCourses = {getAllCourses}/>
     );
