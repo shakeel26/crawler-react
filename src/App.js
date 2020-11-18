@@ -4,9 +4,9 @@ import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-rou
 import Home from "./components/Home";
 
 
+
 function App() {
     const [getAllCourses, setGetAllCourses] = useState([]);
-
     axios.get('http://localhost:8081/getAllCourses')
         .then(res => {
             setGetAllCourses(res.data)

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
-import Modal from "./Modal";
+import Details from "./Details";
 
 
 const Home = (props) => {
@@ -23,7 +23,7 @@ const Home = (props) => {
                 </div>
             </div>)}
             <Switch>
-                <Route path="/:degreeName" children={<Modal singleCourse={oneCourse}/>}/>
+                <Route path="/:degreeName" children={<Details singleCourse={oneCourse}/>}/>
             </Switch>
         </div>
     </Router>
