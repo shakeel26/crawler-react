@@ -10,16 +10,16 @@ const Home = (props) => {
     return <Router>
         <div>
             {props.allCourses.map((eachCourse, index) => <div key={index}>
-                <div id={"deptName-" + index}><h5>{eachCourse.deptName}</h5><span></span></div>
+                <div id={"deptName-" + index}><h5>{eachCourse.deptName}</h5></div>
                 <Link to={"/" + degreeName} name={eachCourse.crawledCourses.degreeName} onClick={(e) => {
 //                        e.preventDefault();
                     setOneCourse(eachCourse);
                     setDegreeName(eachCourse.crawledCourses.degreeName.replace(/ /g, ''));
-                }}> {eachCourse.crawledCourses.degreeName} </Link>
+                }}> <spa>{eachCourse.crawledCourses.degreeName}</span></Link>
                 <div id={"degreeType-" + index}><span>{eachCourse.degreeType}</span></div>
                 <div id={"language-" + index}><span>{eachCourse.crawledCourses.language}</span></div>
                 <div id={"uniName-" + index}><a href={eachCourse.crawledCourses.website} rel="link to uni site"
-                                                target="_blank"> {eachCourse.crawledCourses.uniName}</a><span></span>
+                                                target="_blank"><span>{eachCourse.crawledCourses.uniName}</span></a>
                 </div>
             </div>)}
             <Switch>
