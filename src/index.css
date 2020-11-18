@@ -12,3 +12,29 @@ code {
     monospace;
 }
 
+.degreeName {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.col-sm-9 {
+  text-align: left;
+}
+.modal-dialog {
+  max-width: 60% !important;
+}
+
+#root {
+  height: 100vh;
+  width: calc(100% - 400px);
+  float: right;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 70% !important;
+    margin: 1.75rem auto;
+  }
+}
