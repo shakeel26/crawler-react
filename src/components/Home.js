@@ -6,6 +6,8 @@ import Details from "./Details";
 const Home = (props) => {
     const [degreeName, setDegreeName] = useState("");
     const [oneCourse, setOneCourse] = useState([]);
+    // const [show, setShow] = useState(true);
+    // const handleShow = () => setShow(true);
 
     return <Router>
         <div>
@@ -15,6 +17,7 @@ const Home = (props) => {
 //                        e.preventDefault();
                     setOneCourse(eachCourse);
                     setDegreeName(eachCourse.crawledCourses.degreeName.replace(/ /g, ''));
+                    <Details singleCourse={oneCourse}/>
                 }}> <span>{eachCourse.crawledCourses.degreeName}</span></Link>
                 <div id={"degreeType-" + index}><span>{eachCourse.degreeType}</span></div>
                 <div id={"language-" + index}><span>{eachCourse.crawledCourses.language}</span></div>
