@@ -15,7 +15,7 @@ const Home = (props) => {
 //                        e.preventDefault();
                     setOneCourse(eachCourse);
                     setDegreeName(eachCourse.crawledCourses.degreeName.replace(/ /g, ''));
-                }}> <spa>{eachCourse.crawledCourses.degreeName}</span></Link>
+                }}> <span>{eachCourse.crawledCourses.degreeName}</span></Link>
                 <div id={"degreeType-" + index}><span>{eachCourse.degreeType}</span></div>
                 <div id={"language-" + index}><span>{eachCourse.crawledCourses.language}</span></div>
                 <div id={"uniName-" + index}><a href={eachCourse.crawledCourses.website} rel="link to uni site"
