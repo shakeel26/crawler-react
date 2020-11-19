@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import Details from "./Details";
 
-
 const Home = (props) => {
     const [degreeName, setDegreeName] = useState("");
     const [oneCourse, setOneCourse] = useState([]);

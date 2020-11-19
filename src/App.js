@@ -1,19 +1,30 @@
 import React, {useState} from "react";
 import axios from "axios";
-import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 import Home from "./components/Home";
-
+import FilterForm from './components/FilterForm'
 
 
 function App() {
     const [getAllCourses, setGetAllCourses] = useState([]);
+    const [isLoading, setLoading] = useState(true);
+    const [distinctStuff, setDistinctStuff] = useState([]);
+
     axios.get('http://localhost:8081/getAllCourses')
         .then(res => {
             setGetAllCourses(res.data)
         })
-    return (
-        <Home allCourses = {getAllCourses}/>
-    );
+
+    axios.get('http://localhost:8081/distictStuff')
+        .then(res => {
+            setDistinctStuff(res.data)
+            setLoading(false);
+        })
+
+    return (<div>
+        <Home allCourses={getAllCourses}/>
+        <FilterForm loading={isLoading} distinctData ={distinctStuff}/>
+
+    </div>);
 }
 
 export default App;

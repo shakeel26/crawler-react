@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useParams} from "react-router-dom";
 import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
 import {Button, Table, Modal} from 'react-bootstrap';
-import {TableDetails, ContentDetails} from "./TableDetails";
+import {TableDetails, ContentDetails} from "./ReusedDivs";
 import '../index.css'
 
 const Details = (props) => {
@@ -47,25 +47,25 @@ const Details = (props) => {
                         <tbody>
                         {props.singleCourse.deptName !== '' ?
                             <TableDetails name="Department" id="deptName"
-                                          fieldDesc={props.singleCourse.deptName}/> : null}
+                                        fieldDesc={props.singleCourse.deptName}/> : null}
                         {props.singleCourse.crawledCourses.degreeName !== '' ?
                             <TableDetails name="Degree" id="degreeName"
-                                          fieldDesc={props.singleCourse.crawledCourses.degreeName}/>
+                                        fieldDesc={props.singleCourse.crawledCourses.degreeName}/>
                             : null}
                         {props.singleCourse.crawledCourses.specialization !== '' ?
                             <TableDetails name="Specialization" id="specialization"
-                                          fieldDesc={props.singleCourse.crawledCourses.specialization}/>
+                                        fieldDesc={props.singleCourse.crawledCourses.specialization}/>
                             : null}
                         {props.singleCourse.crawledCourses.duration !== '' ?
                             <TableDetails name="Duration" id="duration"
-                                          fieldDesc={props.singleCourse.crawledCourses.duration}/>
+                                        fieldDesc={props.singleCourse.crawledCourses.duration}/>
                             : null}
                         {props.singleCourse.crawledCourses.fee !== '' ?
                             <TableDetails name="Fee" id="fee" fieldDesc={props.singleCourse.crawledCourses.fee}/>
                             : null}
                         {props.singleCourse.crawledCourses.language !== '' ?
                             <TableDetails name="Language" id="language"
-                                          fieldDesc={props.singleCourse.crawledCourses.language}/>
+                                        fieldDesc={props.singleCourse.crawledCourses.language}/>
                             : null}
                         {props.singleCourse.website !== '' ?
                             <tr className="row">
@@ -76,11 +76,11 @@ const Details = (props) => {
                             </tr> : null}
                         {props.singleCourse.crawledCourses.studyType !== '' ?
                             <TableDetails name="Study Type" id="studyType"
-                                          fieldDesc={props.singleCourse.crawledCourses.studyType}/>
+                                        fieldDesc={props.singleCourse.crawledCourses.studyType}/>
                             : null}
                         {props.singleCourse.crawledCourses.presence !== '' ?
                             <TableDetails name="Presence" id="presence"
-                                          fieldDesc={props.singleCourse.crawledCourses.presence}/>
+                                        fieldDesc={props.singleCourse.crawledCourses.presence}/>
                             : null}
                         </tbody>
                     </Table>
