@@ -17,7 +17,7 @@ code {
   height: 100vh;
   width: 200px;
   float: left;
-  position: absolute;
+  /*position: absolute;*/
 }
 .degreeName {
   cursor: pointer;
@@ -35,8 +35,11 @@ code {
 #root {
   height: 100vh;
   width: calc(100% - 400px);
-  float: right;
+  float: left;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
 }
 
 @media (min-width: 576px) {

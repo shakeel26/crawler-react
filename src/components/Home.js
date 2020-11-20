@@ -9,7 +9,7 @@ const Home = (props) => {
     // const handleShow = () => setShow(true);
 
     return <Router>
-        <div>
+        <div className="content">
             {props.allCourses.map((eachCourse, index) => <div key={index}>
                 <div id={"deptName-" + index}><h5>{eachCourse.deptName}</h5></div>
                 <Link to={"/" + degreeName} name={eachCourse.crawledCourses.degreeName} onClick={(e) => {

@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import {useParams} from "react-router-dom";
-import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Link, Route, Switch, useHistory} from "react-router-dom";
 import {Button, Table, Modal} from 'react-bootstrap';
 import {TableDetails, ContentDetails} from "./ReusedDivs";
 import '../index.css'
 
 const Details = (props) => {
+
+const history = useHistory();
 
     // We can use the `useParams` hook here to access
     // the dynamic pieces of the URL.
@@ -20,13 +22,8 @@ const Details = (props) => {
 
     const handleClose = () => {
         setShow(false);
-        refreshBaby();
+        history.push('/')
     };
-    const refreshBaby = () =>{
-        setTimeout(()=> {
-            window.location.reload(); //reload page with delay of half second
-        }, 200);    }
-    const handleShow = () => setShow(true);
 
     const removeSelfWrittenSentence = props.singleCourse.crawledCourses.aboutThesubjects;
     const aboutSubjects = removeSelfWrittenSentence.replace('You will encounter these subjects in the curriculum:', '');
@@ -35,7 +32,7 @@ const Details = (props) => {
         <BrowserRouter>
         <div className="container">
             {/*<h1 onClick={handleShow}>{props.singleCourse.crawledCourses.degreeName}</h1>*/}
-            <Modal size="lg" show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+            <Modal size="lg" show={show} onHide={handleClose}>
                 <Link to={"/"}>
                 <Modal.Header closeButton onClick={handleClose}>
                     {props.singleCourse.crawledCourses.degreeName !== '' ?
@@ -69,7 +66,7 @@ const Details = (props) => {
                             : null}
                         {props.singleCourse.website !== '' ?
                             <tr className="row">
-                                <td className="col-sm-5"></td>
+                                <td className="col-sm-5">Website</td>
                                 <td className="col-sm-7"
                                     id='website'><a href={props.singleCourse.website}
                                                     target="_blank">{props.singleCourse.website}</a></td>
