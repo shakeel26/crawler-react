@@ -24,8 +24,8 @@ export const Form = (props) => {
             <label htmlFor={props.id}>Choose {props.name}:</label>
             <select name={props.id} id={props.id}>
                 <option name={props.id} id={props.id}>Any</option>
-                {props.fieldDesc.map(desc =>
-                    <option name={props.id} id={props.id}>{props.fieldDesc}</option>
+                {props.fieldDesc.map((desc,index) =>
+                    <option key={index} name={props.id} id={props.id}>{props.fieldDesc}</option>
                 )}
             </select>
         </div>
