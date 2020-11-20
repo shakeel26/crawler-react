@@ -25,7 +25,7 @@ export const Form = (props) => {
             <select name={props.id} id={props.id}>
                 <option name={props.id} id={props.id}>Any</option>
                 {props.fieldDesc.map(desc =>
-                    <option name={props.id} id={props.id}>{desc}</option>
+                    <option name={props.id} id={props.id}>{props.fieldDesc}</option>
                 )}
             </select>
         </div>

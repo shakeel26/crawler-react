@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect,useState} from "react";
 import axios from "axios";
 import Home from "./components/Home";
 import FilterForm from './components/FilterForm'
@@ -9,21 +9,24 @@ function App() {
     const [isLoading, setLoading] = useState(true);
     const [distinctStuff, setDistinctStuff] = useState([]);
 
-    axios.get('http://localhost:8081/getAllCourses')
-        .then(res => {
-            setGetAllCourses(res.data)
-        })
+    useEffect(() => {
+        axios.get('http://localhost:8081/getAllCourses')
+            .then(res => {
+                setGetAllCourses(res.data)
+            }).catch(error => console.log(error))
+    },[getAllCourses.length])
 
-    axios.get('http://localhost:8081/distictStuff')
-        .then(res => {
-            setDistinctStuff(res.data)
-            setLoading(false);
-        })
+    useEffect(() => {
+        axios.get('http://localhost:8081/distictStuff')
+            .then(res => {
+                setDistinctStuff(res.data)
+                setLoading(false);
+            }).catch(error => console.log(error))
+    },[distinctStuff.length])
 
     return (<div>
         <Home allCourses={getAllCourses}/>
-        <FilterForm loading={isLoading} distinctData ={distinctStuff}/>
-
+        <FilterForm loading={isLoading} distinctData={distinctStuff}/>
     </div>);
 }
 
