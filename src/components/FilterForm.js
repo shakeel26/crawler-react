@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Form} from './ReusedDivs'
 import axios from "axios";
 
@@ -21,12 +21,10 @@ const FilterForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('inside submitt', formData)
-
-    axios.get(`http://localhost:8081/filter`, {params: formData})
-        .then(res => {
-            props.onFilterCourses(res.data);
-        }).catch(error => console.log(error))
+            axios.get(`http://localhost:8081/filter`, {params: formData})
+                .then(res => {
+                    props.onFilterCourses(res.data);
+                }).catch(error => console.log(error))
     }
 
     return (

@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
 import FilterForm from './components/FilterForm'
-import Details from "./components/Details";
 
 const App = () => {
     const [getAllCourses, setGetAllCourses] = useState([]);
@@ -33,7 +32,7 @@ const App = () => {
     return (<Router>
         <Switch>
             <Route path="/" >
-            <Home allCourses={getAllCourses}/>
+                <Home allCourses={getAllCourses}/>
                 <FilterForm loading={isLoading} distinctData={distinctStuff} onFilterCourses={filterCourses}/>
             </Route>
         </Switch>

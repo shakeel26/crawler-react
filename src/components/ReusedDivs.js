@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import axios from "axios";
+import React from "react";
 
 
 export const TableDetails = (props) => {
@@ -29,11 +28,6 @@ export const Form = (props) => {
                     <option key={index} name={props.id} id={props.id}>{desc}</option>
                 )}
             </select>
-
-                {/*<label htmlFor="lastName">Last Name</label>*/}
-                {/*<input type="text" name="lastName" value={formData.language} onChange={handleChange} required/>*/}
-
-            {/*<button id="callFilter">Submit</button>*/}
         </div>
     )
 }

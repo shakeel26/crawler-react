@@ -13,10 +13,8 @@ const Home = (props) => {
             {props.allCourses.map((eachCourse, index) => <div key={index}>
                 <div id={"deptName-" + index}><h5>{eachCourse.deptName}</h5></div>
                 <Link to={"/" + degreeName} name={eachCourse.crawledCourses.degreeName} onClick={(e) => {
-//                        e.preventDefault();
                     setOneCourse(eachCourse);
                     setDegreeName(eachCourse.crawledCourses.degreeName.replace(/ /g, ''));
-                    <Details singleCourse={oneCourse}/>
                 }}> <span>{eachCourse.crawledCourses.degreeName}</span></Link>
                 <div id={"degreeType-" + index}><span>{eachCourse.degreeType}</span></div>
                 <div id={"language-" + index}><span>{eachCourse.crawledCourses.language}</span></div>
