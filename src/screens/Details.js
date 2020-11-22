@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link, useHistory} from "react-router-dom";
 import {Button, Table, Modal} from 'react-bootstrap';
-import {TableDetails, ContentDetails} from "./ReusedDivs";
+import {TableDetails, ContentDetails} from "../components/ReusedDivs";
 import '../index.css'
 
 const Details = (props) => {

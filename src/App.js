@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Home from "./components/Home";
-import Error404 from "./components/Error404";
+import Home from "./screens/Home";
+import Error404 from "./screens/Error404";
 
 const App = () => {
     return (

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Details from "./Details";
-import NoOfCourses from "./NoOfCourses";
-import FilterForm from "./FilterForm";
+import NoOfCourses from "../components/NoOfCourses";
+import FilterForm from "../components/FilterForm";
 import axios from "axios";
 
 const Home = () => {
