@@ -5,8 +5,7 @@ import Details from "./Details";
 const Home = (props) => {
     const [degreeName, setDegreeName] = useState("");
     const [oneCourse, setOneCourse] = useState([]);
-    // const [show, setShow] = useState(true);
-    // const handleShow = () => setShow(true);
+
 
     const updateEachCourse = (eachCourse) => {
         console.log('Iam clicked')
