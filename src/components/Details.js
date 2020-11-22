@@ -7,6 +7,7 @@ import '../index.css'
 
 const Details = (props) => {
 
+    console.log('I am also')
 const history = useHistory();
 
     // We can use the `useParams` hook here to access

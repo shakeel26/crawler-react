@@ -8,14 +8,16 @@ const Home = (props) => {
     // const [show, setShow] = useState(true);
     // const handleShow = () => setShow(true);
 
+    const updateEachCourse = (eachCourse) => {
+        console.log('Iam clicked')
+        setOneCourse(eachCourse);
+        setDegreeName(eachCourse.crawledCourses.degreeName.replace(/ /g, ''));
+}
     return <Router>
         <div className="content">
             {props.allCourses.map((eachCourse, index) => <div key={index}>
                 <div id={"deptName-" + index}><h5>{eachCourse.deptName}</h5></div>
-                <Link to={"/" + degreeName} name={eachCourse.crawledCourses.degreeName} onClick={(e) => {
-                    setOneCourse(eachCourse);
-                    setDegreeName(eachCourse.crawledCourses.degreeName.replace(/ /g, ''));
-                }}> <span>{eachCourse.crawledCourses.degreeName}</span></Link>
+                <Link to={"/" + degreeName} name={eachCourse.crawledCourses.degreeName} onClick={() => {updateEachCourse(eachCourse)}}> <span>{eachCourse.crawledCourses.degreeName}</span></Link>
                 <div id={"degreeType-" + index}><span>{eachCourse.degreeType}</span></div>
                 <div id={"language-" + index}><span>{eachCourse.crawledCourses.language}</span></div>
                 <div id={"uniName-" + index}><a href={eachCourse.crawledCourses.website} rel="link to uni site"
