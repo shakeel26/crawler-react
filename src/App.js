@@ -3,6 +3,7 @@ import axios from "axios";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
 import FilterForm from './components/FilterForm'
+import NoOfCourses from './components/NoOfCourses'
 
 const App = () => {
     const [getAllCourses, setGetAllCourses] = useState([]);
@@ -32,6 +33,7 @@ const App = () => {
     return (<Router>
         <Switch>
             <Route path="/" >
+                <NoOfCourses noOfCourses = {getAllCourses.length} />
                 <Home allCourses={getAllCourses}/>
                 <FilterForm loading={isLoading} distinctData={distinctStuff} onFilterCourses={filterCourses}/>
             </Route>
