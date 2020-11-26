@@ -21,8 +21,16 @@ const Home = () => {
             }).catch(error => console.log(error))
     }, [])
 
-    //TODO
     useEffect(() => {
+        const url = window.location.href;
+        const degreeInUrl = url.substring(url.lastIndexOf('/') + 1);
+        if (url.includes('degree')) {
+            getAllCourses.forEach(item => {
+                if (item.crawledCourses.degreeName.replace(/ /g, '') === degreeInUrl){
+                    setOneCourse(item)
+                }
+            })
+    }
         // get name from url,
         // check if url contains string like "/degree/" and if so then proceed otherwise ignore
         // get single course detail from the list of course by searching with degreeName property (apply .filter(item => item.degreeName === pathDegreeName)
