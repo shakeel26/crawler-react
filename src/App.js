@@ -8,8 +8,8 @@ const App = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path={["/"]} component={Home}/>
-                <Route exact path={["/degree/:degreeName"]} component={Home}/>
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/degree/:degreeName" component={Home}/>
                 <Route exact from="*" component={Error404}/>
             </Switch>
         </BrowserRouter>
