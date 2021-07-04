@@ -58,6 +58,7 @@ const Home = () => {
 
             <Box mt={2} style={{textAlign:'center'}}>
                 <img className={classes.cImg} src="https://image.shutterstock.com/image-photo/pakistan-flag-260nw-735206098.jpg" alt="flag img" />
+                <Typography> Supported by </Typography>
                 <Typography className={classes.ambasyName} variant="h4" component="h4">Pakistan embassy</Typography>
             </Box>
         </Grid>
