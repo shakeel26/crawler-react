@@ -32,7 +32,7 @@ code {
   max-width: 60% !important;
 }
 
-#root {
+/* #root {
   height: 100vh;
   width: calc(100% - 400px);
   float: left;
@@ -40,7 +40,7 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-around
-}
+} */
 
 @media (min-width: 576px) {
   .modal-dialog {

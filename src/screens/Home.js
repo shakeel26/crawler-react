@@ -4,8 +4,13 @@ import Details from "./Details";
 import NoOfCourses from "../components/NoOfCourses";
 import FilterForm from "../components/FilterForm";
 import axios from "axios";
+import {Container, Grid,Paper, Box, Typography} from '@material-ui/core';
+import useStyles from './HomeStyles';
 
 const Home = () => {
+
+    const classes = useStyles();
+
     const [oneCourse, setOneCourse] = useState(null);
     const [getAllCourses, setGetAllCourses] = useState([]);
     const [isLoading, setLoading] = useState(true);
@@ -46,11 +51,20 @@ const Home = () => {
     }, [distinctStuff.length])
 
     return (
-        <>
+    <Container maxWidth="xl" style={{padding: "20px"}}>
+        <Grid container spacing={3}>
+        <Grid item sm={3} md={3} lg={3}>
             <NoOfCourses noOfCourses={getAllCourses.length}/>
 
+            <Box mt={2} style={{textAlign:'center'}}>
+                <img className={classes.cImg} src="https://image.shutterstock.com/image-photo/pakistan-flag-260nw-735206098.jpg" alt="flag img" />
+                <Typography className={classes.ambasyName} variant="h4" component="h4">Pakistan embassy</Typography>
+            </Box>
+        </Grid>
+
+        <Grid item sm={5} md={5} lg={5}>
             <div className="list-wrapper">
-                {getAllCourses.map((eachCourse, index) => <div key={index}>
+                {getAllCourses.map((eachCourse, index) => <Paper elevation={4} className={classes.detailCard}  key={index}>
                     <div id={"deptName-" + index}><h5>{eachCourse.deptName}</h5></div>
                     <Link to={"/degree/" + eachCourse.crawledCourses.degreeName.replace(/ /g, '')}
                           name={eachCourse.crawledCourses.degreeName} onClick={() => setOneCourse(eachCourse)}>
@@ -61,12 +75,16 @@ const Home = () => {
                     <div id={"uniName-" + index}><a href={eachCourse.crawledCourses.website} rel="link to uni site"
                                                     target="_blank"><span>{eachCourse.crawledCourses.uniName}</span></a>
                     </div>
-                </div>)}
+                </Paper>)}
                 {oneCourse && <Details singleCourse={oneCourse} setOneCourse={setOneCourse}/>}
             </div>
+        </Grid>
 
+        <Grid item sm={4} md={4} lg={4}>
             <FilterForm loading={isLoading} distinctData={distinctStuff} onFilterCourses={filterCourses}/>
-        </>
+        </Grid>
+        </Grid>
+    </Container>
     )
 }
 export default Home;
