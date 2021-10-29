@@ -66,13 +66,13 @@ const Home = () => {
         <Grid item sm={5} md={5} lg={5}>
             <div className="list-wrapper">
                 {getAllCourses.map((eachCourse, index) => <Paper elevation={4} className={classes.detailCard}  key={index}>
-                    <div id={"deptName-" + index}><h5>{eachCourse.deptName}</h5></div>
                     <Link to={"/degree/" + eachCourse.crawledCourses.degreeName.replace(/ /g, '')}
                           name={eachCourse.crawledCourses.degreeName} onClick={() => setOneCourse(eachCourse)}>
                         <span>{eachCourse.crawledCourses.degreeName}</span>
                     </Link>
                     <div id={"degreeType-" + index}><span>{eachCourse.degreeType}</span></div>
                     <div id={"language-" + index}><span>{eachCourse.crawledCourses.language}</span></div>
+                    <div id={"deptName-" + index}><p>{'Department of ' + eachCourse.deptName}</p></div>
                     <div id={"uniName-" + index}><a href={eachCourse.crawledCourses.website} rel="link to uni site"
                                                     target="_blank"><span>{eachCourse.crawledCourses.uniName}</span></a>
                     </div>
