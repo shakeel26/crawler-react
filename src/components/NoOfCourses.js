@@ -11,9 +11,9 @@ const useStyles = makeStyles(theme => ({
 const NoOfCourses = (props) => {
     const classes = useStyles();
 
-    return <div>
-    <Typography className={classes.root} variant="h6" component="h6">
-    Number of courses are {props.noOfCourses}
+return <div>
+    <Typography className={classes.root} align="left" variant="h6" >
+    Programs found: {props.noOfCourses}
 </Typography>
     </div>
 }

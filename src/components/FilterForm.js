@@ -37,7 +37,7 @@ const FilterForm = (props) => {
                       fieldDesc={props.distinctData.deptNamesResult}/>
                 <Form name="presenceType" id="presenceType" changeSelection={handleChange}
                       fieldDesc={props.distinctData.presensceTypesResult}/>
-                <button id="callFilter">Submit</button>
+                <button id="callFilter">Find Courses</button>
             </form>
         </div>
     )
