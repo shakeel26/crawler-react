@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link, useHistory} from "react-router-dom";
 import {Button, Table, Modal} from 'react-bootstrap';
 import {TableDetails, ContentDetails} from "../components/ReusedDivs";
@@ -53,7 +53,7 @@ const Details = (props) => {
                                 <td className="col-sm-5">Website</td>
                                 <td className="col-sm-7"
                                     id='website'><a href={props.singleCourse.website}
-                                                    target="_blank">{props.singleCourse.website}</a></td>
+                                                    target="_blank" rel="Link to Uni">{props.singleCourse.website}</a></td>
                             </tr> : null}
                         {props.singleCourse.crawledCourses.studyType !== '' ?
                             <TableDetails name="Study Type" id="studyType"
